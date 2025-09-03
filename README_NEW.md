@@ -9,6 +9,7 @@ This application provides a complete solution for managing unit availability and
 ### 🏗️ Architecture
 
 This application consists of two main components:
+
 - **Backend API**: RESTful API server (Port 3001)
 - **Frontend SPA**: React dashboard (Port 3000)
 
@@ -42,6 +43,7 @@ bobox/
 ### 🚀 Key Features
 
 #### ✅ Backend Features
+
 - **RESTful API** with 4 main endpoints
 - **Business Rule Enforcement** for status transitions
 - **Input Validation** and error handling
@@ -50,6 +52,7 @@ bobox/
 - **In-memory storage** for simplicity
 
 #### ✅ Frontend Features
+
 - **Modern React 18+** with TypeScript
 - **Real-time Dashboard** with auto-refresh
 - **Responsive Design** for all devices
@@ -60,11 +63,13 @@ bobox/
 ## 🏃‍♂️ Quick Start Guide
 
 ### Prerequisites
-- Node.js 18+ 
+
+- Node.js 18+
 - npm or yarn
 - Git
 
 ### 🚀 Option 1: Docker (Recommended)
+
 ```bash
 # Clone repository
 git clone https://github.com/icaldaulay/bobox.git
@@ -81,22 +86,27 @@ docker-compose up
 ### 🛠️ Option 2: Manual Setup
 
 #### 1. Backend Setup
+
 ```bash
 cd backend
 npm install
 npm run dev
 ```
+
 ✅ Backend runs on `http://localhost:3001`
 
 #### 2. Frontend Setup (New Terminal)
+
 ```bash
 cd frontend
 npm install
 npm start
 ```
+
 ✅ Frontend runs on `http://localhost:3000`
 
 ### 🧪 Testing
+
 ```bash
 # Backend tests
 cd backend
@@ -110,6 +120,7 @@ npm test
 ## 📋 Business Requirements Implementation
 
 ### Core Features Implemented
+
 - ✅ **Unit Management**: Create, read, update units
 - ✅ **Status Filtering**: Filter by availability status
 - ✅ **Type Filtering**: Filter by unit type (capsule/cabin)
@@ -118,6 +129,7 @@ npm test
 - ✅ **Form Validation**: Input validation with feedback
 
 ### Business Logic: Status Transition Rules
+
 ```
 ❌ INVALID: Occupied → Available (Direct transition blocked)
 ✅ VALID:   Occupied → Cleaning In Progress → Available
@@ -126,6 +138,7 @@ npm test
 ```
 
 **Why this rule matters:**
+
 - Ensures units are properly cleaned before becoming available
 - Maintains operational workflow compliance
 - Prevents skipping essential maintenance steps
@@ -133,43 +146,49 @@ npm test
 ## 🔗 Detailed Documentation
 
 ### 📚 Component Documentation
+
 - **[Backend API Documentation](./backend/README.md)** - Complete API reference, endpoints, business logic
 - **[Frontend App Documentation](./frontend/README.md)** - Component architecture, state management, UI guides
 
 ### 📖 Additional Resources
+
 - **[Backend Indonesian Documentation](./backend/DOKUMENTASI_LENGKAP.md)** - Dokumentasi lengkap dalam Bahasa Indonesia
 
 ## 🛡️ Technology Stack
 
 ### Backend Technologies
-| Technology | Purpose | Version |
-|------------|---------|---------|
-| Node.js | Runtime environment | 18+ |
-| Express.js | Web framework | 4.18+ |
-| TypeScript | Type safety | 5.1+ |
-| Jest | Testing framework | 29+ |
-| UUID | Unique identifiers | 9+ |
+
+| Technology | Purpose             | Version |
+| ---------- | ------------------- | ------- |
+| Node.js    | Runtime environment | 18+     |
+| Express.js | Web framework       | 4.18+   |
+| TypeScript | Type safety         | 5.1+    |
+| Jest       | Testing framework   | 29+     |
+| UUID       | Unique identifiers  | 9+      |
 
 ### Frontend Technologies
-| Technology | Purpose | Version |
-|------------|---------|---------|
-| React | UI framework | 18+ |
-| TypeScript | Type safety | 5.1+ |
-| TanStack Query | Data fetching | 5+ |
-| Axios | HTTP client | 1+ |
-| CSS3 | Styling | - |
+
+| Technology     | Purpose       | Version |
+| -------------- | ------------- | ------- |
+| React          | UI framework  | 18+     |
+| TypeScript     | Type safety   | 5.1+    |
+| TanStack Query | Data fetching | 5+      |
+| Axios          | HTTP client   | 1+      |
+| CSS3           | Styling       | -       |
 
 ### DevOps & Tools
-| Tool | Purpose |
-|------|---------|
-| Docker | Containerization |
-| Git | Version control |
-| ESLint | Code linting |
-| Prettier | Code formatting |
+
+| Tool     | Purpose          |
+| -------- | ---------------- |
+| Docker   | Containerization |
+| Git      | Version control  |
+| ESLint   | Code linting     |
+| Prettier | Code formatting  |
 
 ## 📊 Application Flow
 
 ### 🔄 Data Flow Diagram
+
 ```
 ┌─────────────┐    HTTP/REST    ┌──────────────┐    Business    ┌─────────────┐
 │   React     │◄───────────────►│   Express    │◄──────────────►│  In-Memory  │
@@ -186,6 +205,7 @@ npm test
 ```
 
 ### 🎯 User Journey Flow
+
 ```
 1. 🌐 User opens Dashboard (localhost:3000)
        ↓
@@ -213,8 +233,9 @@ npm test
 ## 🎨 UI/UX Features
 
 ### Dashboard Components
+
 - **📊 Summary Statistics**: Total units by status
-- **🔍 Smart Filters**: Real-time filtering capabilities  
+- **🔍 Smart Filters**: Real-time filtering capabilities
 - **📱 Responsive Cards**: Mobile-friendly unit cards
 - **🎨 Status Colors**: Visual status indicators
 - **⚡ Real-time Updates**: Auto-refresh functionality
@@ -222,6 +243,7 @@ npm test
 - **🚨 Error Handling**: User-friendly error messages
 
 ### Design Principles
+
 - **🎯 User-Centric**: Intuitive navigation and workflows
 - **🎨 Modern Aesthetic**: Professional gradient design
 - **📱 Mobile-First**: Responsive design for all devices
@@ -231,16 +253,19 @@ npm test
 ## 🚀 Deployment Options
 
 ### Development
+
 ```bash
 docker-compose up
 ```
 
 ### Production
+
 ```bash
 docker-compose -f docker-compose.prod.yml up
 ```
 
 ### Cloud Deployment
+
 - **Backend**: Heroku, Railway, AWS Lambda
 - **Frontend**: Netlify, Vercel, AWS S3
 - **Database**: Upgrade to PostgreSQL/MongoDB
@@ -248,12 +273,14 @@ docker-compose -f docker-compose.prod.yml up
 ## 🔍 Code Quality & Testing
 
 ### Backend Testing
+
 - ✅ **Unit Tests**: Business logic validation
-- ✅ **Integration Tests**: API endpoint testing  
+- ✅ **Integration Tests**: API endpoint testing
 - ✅ **Error Handling**: Edge case coverage
 - ✅ **Business Rules**: Status transition validation
 
 ### Code Standards
+
 - ✅ **TypeScript Strict Mode**: Maximum type safety
 - ✅ **ESLint Configuration**: Code quality enforcement
 - ✅ **Consistent Naming**: Clear, descriptive names
@@ -262,12 +289,14 @@ docker-compose -f docker-compose.prod.yml up
 ## 📈 Performance Metrics
 
 ### Backend Performance
+
 - **Response Time**: < 100ms average
 - **Memory Usage**: ~50MB peak
 - **Concurrent Users**: 100+ supported
 - **Error Rate**: < 1%
 
 ### Frontend Performance
+
 - **Load Time**: < 2s initial load
 - **Bundle Size**: < 1MB gzipped
 - **Lighthouse Score**: 95+ average
@@ -276,6 +305,7 @@ docker-compose -f docker-compose.prod.yml up
 ## 🤝 Contributing
 
 ### Development Workflow
+
 1. Fork repository
 2. Create feature branch (`git checkout -b feature/amazing-feature`)
 3. Make changes with proper tests
@@ -284,6 +314,7 @@ docker-compose -f docker-compose.prod.yml up
 6. Open Pull Request
 
 ### Commit Message Convention
+
 ```
 feat: add new feature
 fix: bug fix
@@ -303,7 +334,7 @@ This project is part of a technical assessment for **Bobobox**.
 ## 🎯 Quick Links
 
 - 📚 **[Backend Documentation](./backend/README.md)** - Complete API reference
-- 🎨 **[Frontend Documentation](./frontend/README.md)** - UI component guide  
+- 🎨 **[Frontend Documentation](./frontend/README.md)** - UI component guide
 - 🐳 **[Docker Setup](./docker-compose.yml)** - Container configuration
 - 🧪 **[Testing Guide](./backend/tests/)** - Test suite documentation
 
