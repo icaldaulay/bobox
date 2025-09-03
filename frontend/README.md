@@ -1,46 +1,89 @@
-# Getting Started with Create React App
+# Frontend - Bobox Unit Management
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React SPA untuk dashboard manajemen unit hotel.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Quick Start
 
-### `npm start`
+```bash
+cd frontend
+npm install
+npm start
+# App: http://localhost:3000
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🧩 Komponen Utama
 
-### `npm test`
+### 1. UnitsList.tsx - Main Dashboard
+- ✅ Real-time data dengan auto-refresh
+- ✅ Filter dan search functionality
+- ✅ Summary statistics
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 2. UnitCard.tsx - Individual Unit
+- ✅ Status visualization dengan color coding
+- ✅ Interactive status updates
+- ✅ Business rule validation
 
-### `npm run build`
+### 3. AddUnitForm.tsx - Create Unit
+- ✅ Form validation
+- ✅ Error handling
+- ✅ Success feedback
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 4. FilterControls.tsx - Advanced Filter
+- ✅ Multi-filter support
+- ✅ Active filter tags
+- ✅ Clear functionality
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🔄 State Management
 
-### `npm run eject`
+### React Query Configuration
+```typescript
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 30000,      // 30 detik
+      refetchOnWindowFocus: true,
+    },
+  },
+});
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Custom Hooks
+- **useUnits**: Data fetching dengan auto-refresh
+- **useAddUnit**: Unit creation dengan optimistic updates
+- **useUpdateUnit**: Status updates dengan error rollback
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 🎨 Design System
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```css
+/* Status Colors */
+--status-available: #10b981;   /* Green */
+--status-occupied: #ef4444;    /* Red */
+--status-cleaning: #f59e0b;    /* Orange */
+--status-maintenance: #6b7280; /* Gray */
+```
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🧪 Testing
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm test              # Run tests
+npm test -- --coverage # Coverage report
+```
+
+### Test Coverage
+- **Components**: UI rendering dan interactions
+- **Hooks**: State management logic
+- **Integration**: API communication
+
+---
+
+**Tech Stack**: React 18 + TypeScript + TanStack Query + Jest
